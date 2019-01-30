@@ -44,12 +44,26 @@ $sel="SELECT * FROM `na`";
 $qry= mysqli_query($conn, $sel);
 
 $total=mysqli_num_rows($qry);
-echo '<h1>'.$total .'<h1>';
+//echo '<h1>'.$total .'<h1>';
  
- $page= ceil($total/$p_page) ;
+ $pages= ceil($total/$p_page) ;
+ 
+ if($page<$pages){
+     $next=$page+1;
+     ?> 
+     <a href="?page=<?php echo $next ?>& p_page=<?php echo$p_page?>"> next<a/>
+  <?php   
+ }
+
+ if($page>1){
+     $perv=$page-1;
+     ?> 
+     <a href="?page=<?php echo $perv ?>& p_page=<?php echo$p_page?>"> prev<a/>
+  <?php   
+ }
   for($x=1;$x<=$page;$x++){
        ?>  
-      <a href="?page=<?php echo$x ?> <?php& $p_page=$p_page?>"> <?php echo $x ?><a/>
+        <a href="?page=<?php echo$x ?>& $p_page=<?php echo$p_page?>"> <?php echo $x ?><a/>
   <?php }
  
         
