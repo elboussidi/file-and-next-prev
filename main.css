@@ -1,0 +1,23 @@
+
+/* 
+    Created on : 22 janv. 2019, 20:09:12
+    Author     : abdelmajid
+*/
+body{
+    
+   background-image: url(bgg.png);
+}
+
+input{
+    margin-top: 200px;
+}
+.submit{
+  width: 100px; 
+  margin-top: 40px;
+  white-space: 200px ;
+  height: 30px;
+  border-radius: 16px;
+  background-color:  mediumslateblue ;
+ font-size: 16px;
+}
+
